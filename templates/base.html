@@ -21,7 +21,7 @@
             <link rel="preconnect" href="https://fonts.gstatic.com">
             <link href="https://fonts.googleapis.com/css2?family=Abel&family=Oswald&display=swap" rel="stylesheet">
         <!--Import Base.css-->
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -44,8 +44,17 @@
 </head>
 
 <body>
-    <header>
-        <!--Navbar-->
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0   shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Scrumbles</a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+        <div class="navbar-nav">
+          <div class="nav-item text-nowrap">
+            <a class="nav-link px-3" href="#">Sign out</a>
+          </div>
+        </div>
     </header>
 
     {% block page_header %}
