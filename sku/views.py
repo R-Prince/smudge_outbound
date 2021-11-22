@@ -1,6 +1,7 @@
 from django.shortcuts import (
     render, redirect, reverse, get_object_or_404)
 from .models import Product
+from .forms import ProductForm
 
 
 # Create new Scrumble Products
@@ -13,14 +14,20 @@ def create_sku(request):
             'outer_barcode': request.POST['outer_barcode'],
             'upp': request.POST['upp'],
             'cpp': request.POST['cpp'],
-            'cs_per_pallet': request.POST['cs_per_pallet'],
+            'cs_per_layer': request.POST['cs_per_layer'],
             'layer': request.POST['layer']
         }
-        product = Product(form_data)
+        product = ProductForm(form_data)
         if product.is_valid():
             product.save()
             return redirect(reverse('products'))
-    return render(request, 'sku/create_sku.html')
+    
+    form = ProductForm()
+    template = 'sku/create_sku.html'
+    context = {
+        'form': form
+    }
+    return render(request, template, context)
 
 
 # View Scrumble Products

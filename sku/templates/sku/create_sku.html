@@ -39,7 +39,28 @@
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">Create SKU</h1>
             </div>
-            <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+            <div class="form_container">
+                <form action="{% url 'create_sku' %}" method="POST">
+                    {% csrf_token %}
+                    <fieldset>
+                        {{form.sku_code | as_crispy_field }}
+                        {{form.upc | as_crispy_field }}
+                        {{form.barcode | as_crispy_field }}
+                        {{form.outer_barcode | as_crispy_field }}
+                        {{form.upp | as_crispy_field }}
+                        {{form.cpp | as_crispy_field }}
+                        {{form.cs_per_layer | as_crispy_field }}
+                        {{form.layer | as_crispy_field }}
+                    </fieldset>
+                    <div class="row submit-container">
+                        <div class="d-flex justify-content-center">
+                            <button id="submit-button" class="btn btn-primary">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </main>
     </div>
 </div>
