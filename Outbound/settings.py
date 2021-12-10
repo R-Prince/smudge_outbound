@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'dashboard',
     'sku',
     'pah',
+    'orders',
     'crispy_forms',
 ]
 

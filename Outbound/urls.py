@@ -8,4 +8,5 @@ urlpatterns = [
     path('', include('dashboard.urls')),
     path('', include('sku.urls')),
     path('', include('pah.urls')),
+    path('', include('orders.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
