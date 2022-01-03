@@ -1,3 +1,11 @@
 .form-group{
     padding: 1em;
 }
+
+.order-field{
+    margin: 0.5rem;
+}
+
+.sku-title{
+    margin: 1rem;
+}
